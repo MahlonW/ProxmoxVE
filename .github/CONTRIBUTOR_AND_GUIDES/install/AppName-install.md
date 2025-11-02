@@ -1,7 +1,6 @@
-
 # **AppName<span></span>-install.sh Scripts**
 
- `AppName-install.sh` scripts found in the `/install` directory. These scripts are responsible for the installation of the application. For this guide we take `/install/snipeit-install.sh` as example.
+`AppName-install.sh` scripts found in the `/install` directory. These scripts are responsible for the installation of the application. For this guide we take `/install/snipeit-install.sh` as example.
 
 ## Table of Contents
 
@@ -59,7 +58,7 @@ Example:
 ```bash
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: [YourUserName]
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/MahlonW/ProxmoxVE/raw/main/LICENSE
 # Source: [SOURCE_URL]
 ```
 
@@ -113,7 +112,7 @@ Example:
 $STD apt-get install -y \
   composer \
   git \
-  nginx 
+  nginx
 ```
 
 ### 3.2 **Collapse dependencies**
@@ -190,7 +189,7 @@ read -p "${TAB3}Do you wish to enable HTTPS mode? (y/N): " httpschoice
 ### 6.2 **Verbosity**
 
 - Use the appropiate flag (**-q** in the examples) for a command to suppres its output
-Example:
+  Example:
 
 ```bash
 wget -q

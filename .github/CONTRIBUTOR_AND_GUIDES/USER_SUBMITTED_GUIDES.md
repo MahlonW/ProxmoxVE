@@ -1,6 +1,6 @@
 <div align="center">
   <a href="#">
-    <img src="https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo.png" height="100px" />
+    <img src="https://raw.githubusercontent.com/MahlonW/ProxmoxVE/main/misc/images/logo.png" height="100px" />
  </a>
 </div>
 <h2 align="center">User Submitted Guides </h2>
@@ -35,10 +35,10 @@
 
 [iGPU Transcoding In Proxmox with Jellyfin](https://www.youtube.com/watch?v=XAa_qpNmzZs)
 
-[Proxmox + NetData](<https://dbt3ch.com/books/proxmox-netdata-for-better-insights-and-notifications/page/proxmox-netdata-for-better-insights-and-notifications>)
+[Proxmox + NetData](https://dbt3ch.com/books/proxmox-netdata-for-better-insights-and-notifications/page/proxmox-netdata-for-better-insights-and-notifications)
 
-[Proxmox Homelab Series](<https://blog.kye.dev/proxmox-series>)
+[Proxmox Homelab Series](https://blog.kye.dev/proxmox-series)
 
 [The fastest installation of Docker and Portainer on Proxmox VE](https://lavr.site/en-fastest-install-docker-portainer-proxmox/)
 
-[How To Setup Proxmox Backuper Server Using Helper Scripts](<https://youtu.be/6C2JOsrZZZw?si=kkrrcL_nLCDBJkOB>)
+[How To Setup Proxmox Backuper Server Using Helper Scripts](https://youtu.be/6C2JOsrZZZw?si=kkrrcL_nLCDBJkOB)

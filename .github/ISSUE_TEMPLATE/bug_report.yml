@@ -6,14 +6,13 @@ body:
     attributes:
       value: |
         ## ⚠️ **IMPORTANT - READ FIRST**  
-        - 🔍 **Search first:** Before submitting, check if the issue has already been reported or resolved in [closed issues](https://github.com/community-scripts/ProxmoxVE/issues?q=is%3Aissue+is%3Aclosed). If found, comment on that issue instead of creating a new one.  
-        Alternatively, check the **[Discussions](https://github.com/community-scripts/ProxmoxVE/discussions)** under the *"Announcement"* or *"Guide"* categories for relevant information.  
+        - 🔍 **Search first:** Before submitting, check if the issue has already been reported or resolved in [closed issues](https://github.com/MahlonW/ProxmoxVE/issues?q=is%3Aissue+is%3Aclosed). If found, comment on that issue instead of creating a new one.  
+        Alternatively, check the **[Discussions](https://github.com/MahlonW/ProxmoxVE/discussions)** under the *"Announcement"* or *"Guide"* categories for relevant information.  
         - 🔎 If you encounter `[ERROR] in line 23: exit code *: while executing command "$@" > /dev/null 2>&1`, rerun the script with verbose mode before submitting the issue.  
         - 📜 **Read the script:** Familiarize yourself with the script's content and its purpose. This will help you understand the issue better and provide more relevant information
 
-        Thank you for taking the time to report an issue! Please provide as much detail as possible to help us address the problem efficiently.  
+        Thank you for taking the time to report an issue! Please provide as much detail as possible to help us address the problem efficiently.
 
-     
   - type: input
     id: guidelines
     attributes:
@@ -34,7 +33,7 @@ body:
     id: script_command
     attributes:
       label: 📂 What was the exact command used to execute the script?
-      placeholder: "e.g., bash -c \"$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/zigbee2mqtt.sh)\" or \"update\""
+      placeholder: 'e.g., bash -c "$(curl -fsSL https://raw.githubusercontent.com/MahlonW/ProxmoxVE/main/ct/zigbee2mqtt.sh)" or "update"'
     validations:
       required: true
 
@@ -56,7 +55,7 @@ body:
     attributes:
       label: 🖥️ Which Linux distribution are you using?
       options:
-        - 
+        -
         - Alpine
         - Debian 11
         - Debian 12

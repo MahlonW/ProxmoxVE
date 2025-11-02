@@ -9,13 +9,13 @@ body:
         **IMPORTANT:** Failure to comply with the following guidelines may result in immediate closure.
         - Prior to submitting, kindly search the closed issues to check if the problem you are reporting has already been addressed and resolved. If you come across a closed issue that pertains to your problem, please leave a comment on that issue instead of creating a new one.
         - If the problem is related to a bug in the website, kindly check for browser compatibility and ensure the issue occurs in multiple browsers before submitting.
-        - For suggestions, questions, or feature requests, please use the [Discussions section.](https://github.com/community-scripts/ProxmoxVE/discussions)
-  
+        - For suggestions, questions, or feature requests, please use the [Discussions section.](https://github.com/MahlonW/ProxmoxVE/discussions)
+
   - type: input
     id: guidelines
     attributes:
       label: Please verify that you have read and understood the guidelines.
-      placeholder: 'yes'
+      placeholder: "yes"
     validations:
       required: true
 
@@ -26,12 +26,12 @@ body:
     attributes:
       label: What type of issue is this?
       options:
-        - 
+        -
         - Bug
         - Optimization
         - Documentation
         - Other
-  
+
   - type: textarea
     id: bug_description
     attributes:
@@ -46,13 +46,13 @@ body:
     attributes:
       label: Which browser are you using?
       options:
-        - 
+        -
         - Chrome
         - Firefox
         - Safari
         - Edge
         - Other
-  
+
   - type: markdown
     attributes:
       value: |
