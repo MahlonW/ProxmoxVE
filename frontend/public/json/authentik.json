@@ -1,0 +1,53 @@
+{
+  "name": "Authentik",
+  "slug": "authentik",
+  "categories": [
+    6
+  ],
+  "date_created": "2025-01-27",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "interface_port": 9000,
+  "documentation": "https://goauthentik.io/docs/",
+  "website": "https://goauthentik.io/",
+  "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/authentik.webp",
+  "config_path": "/opt/authentik/.env",
+  "description": "Authentik is an open-source Identity and Access Management (IAM) system that provides flexible and scalable authentication and authorization solutions. It supports various protocols including OAuth2, OpenID Connect (OIDC), SAML, LDAP, and RADIUS, making it suitable for integrating with a wide range of applications and services. Authentik offers pre-built workflows, customizable templates, and can be deployed via Docker Compose.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/authentik.sh",
+      "resources": {
+        "cpu": 2,
+        "ram": 8192,
+        "hdd": 20,
+        "os": "debian",
+        "version": "12"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": "admin",
+    "password": "Created during initial setup"
+  },
+  "notes": [
+    {
+      "text": "Authentik requires significant resources. Minimum 8GB RAM recommended for optimal performance.",
+      "type": "warning"
+    },
+    {
+      "text": "First startup can take several minutes. Access the initial setup at http://YOUR_IP:9000/if/flow/initial-setup/",
+      "type": "info"
+    },
+    {
+      "text": "Check container logs with: docker compose -f /opt/authentik/docker-compose.yml logs",
+      "type": "info"
+    },
+    {
+      "text": "Credentials are saved to ~/authentik.creds on the Proxmox host",
+      "type": "info"
+    }
+  ]
+}
+
