@@ -34,32 +34,38 @@ mkdir -p /opt/authentik
 cd /opt/authentik
 
 # Download Authentik docker-compose.yml using official method
-curl -fsSL https://raw.githubusercontent.com/goauthentik/authentik/main/docker-compose.yml.example -o docker-compose.yml
+msg_info "Downloading Authentik docker-compose.yml"
+if ! curl -fsSL https://goauthentik.io/docker-compose.yml -o docker-compose.yml; then
+  msg_info "Trying alternative download source"
+  curl -fsSL https://raw.githubusercontent.com/goauthentik/authentik/main/docker-compose.yml.example -o docker-compose.yml || {
+    msg_error "Failed to download docker-compose.yml"
+    exit 1
+  }
+fi
+msg_ok "Downloaded docker-compose.yml"
 
-# Generate secrets
-SECRET_KEY=$(openssl rand -base64 32)
-POSTGRES_PASSWORD=$(openssl rand -base64 32)
-REDIS_PASSWORD=$(openssl rand -base64 32)
+# Generate secrets (using Authentik's expected variable names)
+PG_PASS=$(openssl rand -base64 36 | tr -d '\n')
+AUTHENTIK_SECRET_KEY=$(openssl rand -base64 60 | tr -d '\n')
 
-# Create .env file with required environment variables
+# Create .env file with required environment variables (Authentik format)
 cat <<EOF >/opt/authentik/.env
 # Generated secrets - keep these safe!
-AUTHENTIK_SECRET_KEY=${SECRET_KEY}
-POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-REDIS_PASSWORD=${REDIS_PASSWORD}
+PG_PASS=${PG_PASS}
+AUTHENTIK_SECRET_KEY=${AUTHENTIK_SECRET_KEY}
 
 # Authentik configuration
-AUTHENTIK_DISABLE_UPDATE_CHECK=false
-AUTHENTIK_DISABLE_STARTUP_ANALYTICS=false
+AUTHENTIK_ERROR_REPORTING__ENABLED=true
+COMPOSE_PORT_HTTP=9000
+COMPOSE_PORT_HTTPS=9443
 EOF
 
 # Save credentials
 {
   echo "Authentik Credentials"
   echo "===================="
-  echo "PostgreSQL Password: ${POSTGRES_PASSWORD}"
-  echo "Redis Password: ${REDIS_PASSWORD}"
-  echo "Secret Key: ${SECRET_KEY}"
+  echo "PostgreSQL Password: ${PG_PASS}"
+  echo "Secret Key: ${AUTHENTIK_SECRET_KEY}"
   echo ""
   echo "Access URL: http://$(hostname -I | awk '{print $1}'):9000/if/flow/initial-setup/"
   echo "Initial setup will create the admin account."
