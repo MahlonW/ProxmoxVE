@@ -7,7 +7,7 @@ on:
 
 jobs:
   sync:
-    if: github.repository == 'community-scripts/ProxmoxVE'
+    if: github.repository == 'MahlonW/ProxmoxVE'
     runs-on: ubuntu-latest
 
     steps:
@@ -21,12 +21,12 @@ jobs:
           echo "Searching for files containing raw.githubusercontent.com URLs..."
 
           # Find all files containing GitHub raw URLs, excluding certain directories
-          files_with_github_urls=$(grep -r "https://raw.githubusercontent.com/community-scripts/ProxmoxVE" . --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.github/workflows --files-with-matches || true)
+          files_with_github_urls=$(grep -r "https://raw.githubusercontent.com/MahlonW/ProxmoxVE" . --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.github/workflows --files-with-matches || true)
 
           if [ -n "$files_with_github_urls" ]; then
             echo "$files_with_github_urls" | while read file; do
               if [ -f "$file" ]; then
-                sed -i 's|https://raw\.githubusercontent\.com/community-scripts/ProxmoxVE/|https://git.community-scripts.org/community-scripts/ProxmoxVE/raw/branch/|g' "$file"
+                sed -i 's|https://raw\.githubusercontent\.com/MahlonW/ProxmoxVE/|https://git.community-scripts.org/MahlonW/ProxmoxVE/raw/branch/|g' "$file"
               fi
             done         
           else
@@ -39,7 +39,7 @@ jobs:
         run: |
           git config --global user.name "Push From Github"
           git config --global user.email "actions@github.com"
-          git remote add gitea https://$GITEA_USER:$GITEA_TOKEN@git.community-scripts.org/community-scripts/ProxmoxVE.git
+          git remote add gitea https://$GITEA_USER:$GITEA_TOKEN@git.community-scripts.org/MahlonW/ProxmoxVE.git
           git add .
           git commit -m "Sync to Gitea"
           git push gitea --all --force

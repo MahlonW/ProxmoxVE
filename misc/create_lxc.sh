@@ -3,17 +3,17 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # Co-Author: MickLesk
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/MahlonW/ProxmoxVE/raw/main/LICENSE
 
 # This sets verbose mode if the global variable is set to "yes"
 # if [ "$VERBOSE" == "yes" ]; then set -x; fi
 
 if command -v curl >/dev/null 2>&1; then
-  source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/core.func)
+  source <(curl -fsSL https://raw.githubusercontent.com/MahlonW/ProxmoxVE/main/misc/core.func)
   load_functions
   #echo "(create-lxc.sh) Loaded core.func via curl"
 elif command -v wget >/dev/null 2>&1; then
-  source <(wget -qO- https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/core.func)
+  source <(wget -qO- https://raw.githubusercontent.com/MahlonW/ProxmoxVE/main/misc/core.func)
   load_functions
   #echo "(create-lxc.sh) Loaded core.func via wget"
 fi
@@ -345,7 +345,7 @@ if ! pct create "$CTID" "${TEMPLATE_STORAGE}:vztmpl/${TEMPLATE}" "${PCT_OPTIONS[
     msg_error "Template appears to be corrupted – re-downloading."
     rm -f "$TEMPLATE_PATH"
   else
-    msg_error "Template is valid, but container creation failed. Update your whole Proxmox System (pve-container) first or check https://github.com/community-scripts/ProxmoxVE/discussions/8126"
+    msg_error "Template is valid, but container creation failed. Update your whole Proxmox System (pve-container) first or check https://github.com/MahlonW/ProxmoxVE/discussions/8126"
     exit 209
   fi
 

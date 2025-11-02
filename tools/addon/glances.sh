@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster) | MickLesk (CanbiZ)
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/MahlonW/ProxmoxVE/raw/main/LICENSE
 
 function header_info {
   clear
@@ -48,7 +48,7 @@ install_glances_debian() {
   msg_ok "Installed dependencies"
 
   msg_info "Setting up Python + uv"
-  source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/misc/tools.func)
+  source <(curl -fsSL https://raw.githubusercontent.com/MahlonW/ProxmoxVED/main/misc/tools.func)
   setup_uv PYTHON_VERSION="3.12"
   msg_ok "Setup Python + uv"
 
@@ -118,7 +118,7 @@ install_glances_alpine() {
   msg_ok "Installed dependencies"
 
   msg_info "Setting up Python + uv"
-  source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/misc/tools.func)
+  source <(curl -fsSL https://raw.githubusercontent.com/MahlonW/ProxmoxVED/main/misc/tools.func)
   setup_uv PYTHON_VERSION="3.12"
   msg_ok "Setup Python + uv"
 

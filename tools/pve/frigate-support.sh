@@ -3,7 +3,7 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# https://github.com/MahlonW/ProxmoxVE/raw/main/LICENSE
 
 function header_info {
   clear
@@ -89,5 +89,5 @@ EOF
 echo -e "\e[1;33m \nFinished....Reboot ${CTID} LXC to apply the changes.\n \e[0m"
 
 # In the Proxmox web shell run
-# bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/frigate-support.sh)"
+# bash -c "$(curl -fsSL https://raw.githubusercontent.com/MahlonW/ProxmoxVE/main/tools/pve/frigate-support.sh)"
 # Reboot the LXC to apply the changes

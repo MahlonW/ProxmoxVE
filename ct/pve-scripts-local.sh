@@ -1,8 +1,8 @@
 ﻿#!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/MahlonW/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: michelroegl-brunner
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/MahlonW/ProxmoxVE/raw/main/LICENSE
 # Source: https://www.debian.org/
 
 APP="PVE-Scripts-Local"
@@ -28,7 +28,7 @@ function update_script() {
     exit
   fi
 
-  if check_for_gh_release "ProxmoxVE-Local" "community-scripts/ProxmoxVE-Local"; then
+  if check_for_gh_release "ProxmoxVE-Local" "MahlonW/ProxmoxVE-Local"; then
     msg_info "Stopping Services"
     systemctl stop pvescriptslocal
     msg_ok "Stopped Services"
@@ -38,7 +38,7 @@ function update_script() {
     cp -r /opt/ProxmoxVE-Local/data /opt/data.bak
     msg_ok "Backed up Data"
 
-    CLEAN_INSTALL=1 fetch_and_deploy_gh_release "ProxmoxVE-Local" "community-scripts/ProxmoxVE-Local"
+    CLEAN_INSTALL=1 fetch_and_deploy_gh_release "ProxmoxVE-Local" "MahlonW/ProxmoxVE-Local"
 
     msg_info "Restoring Data"
     if [[ -f /opt/.env.bak ]]; then
